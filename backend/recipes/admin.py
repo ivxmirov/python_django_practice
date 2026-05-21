@@ -1,10 +1,9 @@
+from admin_auto_filters.filters import AutocompleteFilter
 from django.contrib import admin
 from django.contrib.auth import get_user_model
-from admin_auto_filters.filters import AutocompleteFilter
-
 from foodgram import constants
-from recipes.models import (Favorite, Ingredient, Recipe, RecipeIngredient,
-                            ShoppingList, Tag)
+
+from recipes.models import Favorite, Ingredient, Recipe, RecipeIngredient, ShoppingList, Tag
 
 User = get_user_model()
 
@@ -40,8 +39,7 @@ class RecipeIngredientInLine(admin.TabularInline):
     model = RecipeIngredient
 
     def get_queryset(self, request):
-        queryset = super().get_queryset(request).select_related(
-            'recipe', 'ingredient')
+        queryset = super().get_queryset(request).select_related('recipe', 'ingredient')
         return queryset
 
 
@@ -52,8 +50,7 @@ class FavoriteAdmin(admin.ModelAdmin):
     list_filter = (UserFilter, RecipeFilter)
 
     def get_queryset(self, request):
-        queryset = super().get_queryset(request).select_related(
-            'user', 'recipe')
+        queryset = super().get_queryset(request).select_related('user', 'recipe')
         return queryset
 
 
@@ -79,7 +76,8 @@ class RecipeAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         queryset = (
-            super().get_queryset(request)
+            super()
+            .get_queryset(request)
             .select_related('author')
             .prefetch_related('ingredients', 'tags')
         )
@@ -93,13 +91,18 @@ class ShoppingListAdmin(admin.ModelAdmin):
     list_filter = (UserFilter, RecipeFilter)
 
     def get_queryset(self, request):
-        queryset = super().get_queryset(request).select_related(
-            'user', 'recipe')
+        queryset = super().get_queryset(request).select_related('user', 'recipe')
         return queryset
 
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
     empty_value_display = constants.EMPTY_VALUE_DISPLAY
-    list_display = ('name', 'slug',)
-    search_fields = ('name', 'slug',)
+    list_display = (
+        'name',
+        'slug',
+    )
+    search_fields = (
+        'name',
+        'slug',
+    )

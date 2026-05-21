@@ -2,8 +2,8 @@ import csv
 import logging
 
 from django.core.management.base import BaseCommand
-
 from foodgram import settings
+
 from recipes.models import Ingredient
 
 
@@ -16,9 +16,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         success_count = 0
         with open(
-                f'{settings.BASE_DIR}/data/ingredients.csv',
-                'r',
-                encoding='utf-8',
+            f'{settings.BASE_DIR}/data/ingredients.csv',
+            'r',
+            encoding='utf-8',
         ) as csv_file:
             reader = csv.reader(csv_file)
 

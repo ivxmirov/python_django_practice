@@ -1,0 +1,109 @@
+[project]
+name = "python-django-practice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9,<3.10"
+dependencies = [
+    "asgiref==3.8.1",
+    "certifi==2024.8.30",
+    "cffi==1.17.1",
+    "charset-normalizer==3.4.0",
+    "coreapi==2.3.3",
+    "coreschema==0.0.4",
+    "cryptography==43.0.3",
+    "defusedxml==0.8.0rc2",
+    "django==4.2.16",
+    "django-admin-autocomplete-filter==0.7.1",
+    "django-cors-headers==4.6.0",
+    "django-filter==23.1",
+    "django-templated-mail==1.1.1",
+    "djangorestframework==3.15.2",
+    "djoser==2.1.0",
+    "gunicorn==23.0.0",
+    "idna==3.10",
+    "importlib-metadata==8.5.0",
+    "isort==5.13.2",
+    "itypes==1.2.0",
+    "jinja2==3.1.4",
+    "markdown==3.7",
+    "markupsafe==3.0.2",
+    "oauthlib==3.2.2",
+    "pillow==9.3.0",
+    "psycopg2-binary==2.9.3",
+    "pycparser==2.22",
+    "pyjwt==2.9.0",
+    "python-dotenv==1.0.1",
+    "python3-openid==3.2.0",
+    "requests==2.32.3",
+    "requests-oauthlib==2.0.0",
+    "six==1.16.0",
+    "social-auth-app-django==4.0.0",
+    "social-auth-core==4.5.4",
+    "sqlparse==0.5.1",
+    "typing-extensions==4.12.2",
+    "uritemplate==4.1.1",
+    "urllib3==2.2.3",
+    "zipp==3.20.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "ruff",
+    "mypy",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = [
+    "venv/",
+    ".venv/",
+    "tests/",
+    "**/migrations/",
+    ".*/__pycache__/",
+    "frontend/",
+    "postman_collection/",
+    "infra",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.format]
+# Форматирование фрагментов кода в докстрингах
+docstring-code-format = true
+# Стиль кавычек
+quote-style = "single"
+# Перенос элементов в зависимости от запятой в конце строки
+skip-magic-trailing-comma = false
+exclude = [
+    "venv/",
+    ".venv/",
+    "tests/",
+    "**/migrations/",
+    ".*/__pycache__/",
+    "frontend/",
+    "postman_collection/",
+    "infra",
+]
+
+[tool.mypy]
+python_version = "3.9"
+strict = false
+ignore_missing_imports = true
+warn_return_any = false
+warn_unused_configs = true
+follow_imports = "skip"
+exclude = [
+    "venv/",
+    ".venv/",
+    "tests/",
+    ".*/migrations/",
+    ".*/__pycache__/",
+    "frontend/",
+    "postman_collection/",
+    "infra",
+]
+cache_dir = ".mypy_cache"

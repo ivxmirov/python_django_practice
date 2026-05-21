@@ -1,6 +1,5 @@
-from rest_framework.pagination import PageNumberPagination
-
 from foodgram import constants
+from rest_framework.pagination import PageNumberPagination
 
 
 class CustomLimitPagination(PageNumberPagination):
