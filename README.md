@@ -1,6 +1,6 @@
-# [Ваша кулинарная книга](https://github.com/ivxmirov/foodgram.git) 🍳
+# [Ваша кулинарная книга](https://github.com/ivxmirov/python_django_practice.git) 🍳
 
-Это платформа для обмена рецептами ваших любимых блюд с другими пользователями. Пользователи Foodgram могут публиковать свои рецепты, добавлять чужие рецепты в избранное и подписываться на публикации других авторов. Зарегистрированным пользователям также доступен сервис «Список покупок»: он создает список продуктов, которые нужно купить для приготовления выбранных блюд.
+Это платформа для обмена рецептами ваших любимых блюд с другими пользователями. Пользователи могут публиковать свои рецепты, добавлять чужие рецепты в избранное и подписываться на публикации других авторов. Зарегистрированным пользователям также доступен сервис «Список покупок»: он создает список продуктов, которые нужно купить для приготовления выбранных блюд.
 <br><hr>
 
 ### Возможности:
@@ -110,7 +110,7 @@ Response:
     "first_name": "Вася",
     "last_name": "Иванов",
     "is_subscribed": false,
-    "avatar": "http://foodgram.example.org/media/users/image.png"
+    "avatar": "http://python_django_practice.example.org/media/users/image.png"
 }
 ```
 
@@ -158,7 +158,7 @@ Response:
     "first_name": "Вася",
     "last_name": "Иванов",
     "is_subscribed": false,
-    "avatar": "http://foodgram.example.org/media/users/image.png"
+    "avatar": "http://python_django_practice.example.org/media/users/image.png"
   },
   "ingredients": [
     {
@@ -171,7 +171,7 @@ Response:
   "is_favorited": true,
   "is_in_shopping_cart": true,
   "name": "string",
-  "image": "http://foodgram.example.org/media/recipes/images/image.png",
+  "image": "http://python_django_practice.example.org/media/recipes/images/image.png",
   "text": "string",
   "cooking_time": 1
 }
@@ -187,7 +187,7 @@ Response:
 {
   "id": 0,
   "name": "string",
-  "image": "http://foodgram.example.org/media/recipes/images/image.png",
+  "image": "http://python_django_practice.example.org/media/recipes/images/image.png",
   "cooking_time": 1
 }
 ```
@@ -202,7 +202,7 @@ Response:
 {
   "id": 0,
   "name": "string",
-  "image": "http://foodgram.example.org/media/recipes/images/image.png",
+  "image": "http://python_django_practice.example.org/media/recipes/images/image.png",
   "cooking_time": 1
 }
 ```
@@ -225,14 +225,14 @@ Response:
     {
       "id": 0,
       "name": "string",
-      "image": "http://foodgram.example.org/media/recipes/images/image.png",
+      "image": "http://python_django_practice.example.org/media/recipes/images/image.png",
       "cooking_time": 1
     }
   ],
   "recipes_count": 0,
-  "avatar": "http://foodgram.example.org/media/users/image.png"
+  "avatar": "http://python_django_practice.example.org/media/users/image.png"
 }
 ```
 
 ### Автор
-Хмыров Илья - [GitHub](https://github.com/ivxmirov)
+Илья Хмыров - [GitHub](https://github.com/ivxmirov)
