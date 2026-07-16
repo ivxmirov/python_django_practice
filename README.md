@@ -282,7 +282,6 @@ python_django_practice
 │  │  │  └─ __init__.py
 │  │  ├─ models.py
 │  │  └─ __init__.py
-│  ├─ requirements.txt
 │  └─ users
 │     ├─ admin.py
 │     ├─ apps.py
@@ -555,4 +554,3 @@ python_django_practice
 
 ## Автор
 ivxmirov - [GitHub](https://github.com/ivxmirov)
-
