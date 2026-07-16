@@ -1,6 +1,17 @@
 FROM python:3.9
 WORKDIR /app
-COPY requirements.txt /app
-RUN python -m pip install --upgrade pip && pip install -r requirements.txt --no-cache-dir
+
+# Устанавливаем uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+# Копируем только файлы с зависимостями (для кеширования слоёв)
+COPY pyproject.toml uv.lock /app/
+
+# Устанавливаем зависимости
+RUN uv sync --frozen --no-dev
+
+# Копируем весь проект
 COPY . .
-CMD ["gunicorn", "--bind", "0.0.0.0:8888", "foodgram.wsgi"]
+
+# Команда запуска — теперь через uv run, чтобы подхватить виртуальное окружение
+CMD ["uv", "run", "gunicorn", "--bind", "0.0.0.0:8888", "foodgram.wsgi"]
