@@ -125,6 +125,7 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        port: 4444
         source: "infra/docker-compose.production.yml"
         target: "foodgram/infra"
     - name: Executing remote ssh commands to deploy
@@ -134,6 +135,7 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        port: 4444
         script: |
           sudo docker system prune -af
           sudo apt clean
