@@ -13,4 +13,7 @@ RUN uv sync --frozen --no-dev
 # Копируем код бэкенда
 COPY backend/ /app/
 
+# Добавляем venv в PATH
+ENV PATH="/app/.venv/bin:$PATH"
+
 CMD ["uv", "run", "gunicorn", "--bind", "0.0.0.0:8888", "foodgram.wsgi"]
