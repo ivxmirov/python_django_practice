@@ -135,8 +135,10 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 4444
         script: |
-          docker system prune -f
+          docker system prune -af
           docker builder prune -f
+          apt clean
+          apt autoremove -y
           set -e
           mkdir -p foodgram/infra
           cd foodgram/infra
