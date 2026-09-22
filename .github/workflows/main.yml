@@ -124,17 +124,15 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         port: 4444
-        source: "infra/docker-compose.production.yml"
-        target: "foodgram/infra"
+        source: "infra/"
+        target: "foodgram"
     - name: Executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         port: 4444
         script: |
           sudo docker system prune -af
